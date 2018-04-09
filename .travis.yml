@@ -23,6 +23,13 @@ install:
   - git fetch --unshallow --tags
 
 deploy:
+    provider: pages
+    skip-cleanup: true
+    api_key: $GITHUB_ACCESS_TOKEN
+    keep-history: true
+    on:
+        branch: master
+
   provider: releases
   api_key: $GITHUB_ACCESS_TOKEN
   file_glob: true
